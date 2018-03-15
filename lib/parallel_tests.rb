@@ -9,7 +9,7 @@ module ParallelTests
   autoload :CLI, "parallel_tests/cli"
   autoload :VERSION, "parallel_tests/version"
   autoload :Grouper, "parallel_tests/grouper"
-  autoload :Pids, "parallel_tests/pids"
+  autoload : , "parallel_tests/pids"
 
   class << self
     def determine_number_of_processes(count)
@@ -81,7 +81,7 @@ module ParallelTests
 
     def wait_for_other_processes_to_finish
       return unless ENV["TEST_ENV_NUMBER"]
-      sleep 1 until number_of_running_processes <= 1
+      sleep 1 until number_of_running_processes <= 2
     end
 
     def number_of_running_processes
