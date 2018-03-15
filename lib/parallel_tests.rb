@@ -9,7 +9,7 @@ module ParallelTests
   autoload :CLI, "parallel_tests/cli"
   autoload :VERSION, "parallel_tests/version"
   autoload :Grouper, "parallel_tests/grouper"
-  autoload : , "parallel_tests/pids"
+  autoload :Pids, "parallel_tests/pids"
 
   class << self
     def determine_number_of_processes(count)
