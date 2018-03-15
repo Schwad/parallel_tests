@@ -78,10 +78,11 @@ module ParallelTests
     def with_ruby_binary(command)
       WINDOWS ? "#{RUBY_BINARY} -- #{command}" : command
     end
-
-    def wait_for_other_processes_to_finish
+    
+    #If the user's CI results in a different process count at its conclusion, the user can supply a custom process count figure.
+    def wait_for_other_processes_to_finish(process_count=1)
       return unless ENV["TEST_ENV_NUMBER"]
-      sleep 1 until number_of_running_processes <= 2
+      sleep 1 until number_of_running_processes <= process_count
     end
 
     def number_of_running_processes
